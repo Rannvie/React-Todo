@@ -1,11 +1,7 @@
 import Todo from './Todo';
 
-function TodoList() {
-  return (
-    <div>
-      <Todo />
-    </div>
-  );
+function TodoList({ todos }) {
+  return todos.map((todo, index) => <Todo key={index} todo={todo} />);
 }
 
 export default TodoList;
