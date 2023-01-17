@@ -4,8 +4,9 @@ import styles from './TodoList.module.css';
 function TodoList({ todos, deleteTodo }) {
   return (
     <div className={styles.todoListContainer}>
-      {todos.map((todo, index) => (
-        <Todo key={index} todo={todo} index={index} deleteTodo={deleteTodo} />
+      {!todos.length && <h2>Todo list is empty</h2>}
+      {todos.map((todo) => (
+        <Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} />
       ))}
     </div>
   );
